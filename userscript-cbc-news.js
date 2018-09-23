@@ -1,16 +1,19 @@
 // ==UserScript==
-// @name         cbc news improvements
+// @name         cbc links
 // @namespace    http://nicer.info
 // @version      0.2
 // @description  support visited links for CBC news
 // @author       Vid
-// @match        http://www.cbc.ca/news
+// @match        https://www.cbc.ca/news
 // @grant        none
-// @require      https://code.jquery.com/jquery-2.1.3.min.js
+// @license      MIT
 // ==/UserScript==
 
+
 (function(doc) {
-    
-      $("<style>").prop("type", "text/css").html("a:visited h3.headline { color: purple !important;}").appendTo("head");
-    
+  const style = document.createElement("style");
+  style.setAttribute("media", "screen")
+  style.appendChild(document.createTextNode(""));
+  document.head.appendChild(style);
+  style.sheet.insertRule("a:visited { color: purple !important }", 0);
 })(document);
